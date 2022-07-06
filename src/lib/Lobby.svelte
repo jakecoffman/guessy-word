@@ -11,7 +11,7 @@
   }
 
   function joinNew() {
-    ws.send(JSON.stringify({Type: 'join', Data: newGameNumber}))
+    ws.send(JSON.stringify({Type: 'join', Data: newGameNumber.toString()}))
   }
 
   function toggleReady() {
@@ -60,7 +60,7 @@
 
   <fieldset style="margin-top: 1rem">
     <legend>Join a Game</legend>
-    <input type="number" maxlength="6" bind:value={newGameNumber}>
+    <input type="number" min="000000" max="999999" bind:value={newGameNumber}>
     <button on:click={joinNew}>Join</button>
   </fieldset>
 
