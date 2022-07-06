@@ -22,7 +22,7 @@
   <fieldset>
     <legend>Your Guess</legend>
     <input type="text" bind:value={myGuess}>
-    <button on:click={submitGuess}>Submit Guess</button>
+    <button on:click={submitGuess} style="background: #a16868;">Submit Guess</button>
   </fieldset>
 
   <p>Score: {game.Score}/{game.Round}</p>

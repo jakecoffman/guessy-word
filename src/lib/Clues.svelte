@@ -20,6 +20,6 @@
   <fieldset>
     <legend>Your clue</legend>
     <input type="text" bind:value={myClue}>
-    <button on:click={submit}>Submit Clue</button>
+    <button on:click={submit} style="background: #5e5ea1">Submit Clue</button>
   </fieldset>
 </article>

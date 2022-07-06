@@ -39,7 +39,7 @@
   </ul>
 
   {#if !you.IsReady}
-    <button on:click={toggleReady} style="margin-bottom: 1rem;">
+    <button on:click={toggleReady} style="background: #5f985f; margin-bottom: 1rem;">
       Ready Up!
     </button>
   {/if}

@@ -11,7 +11,7 @@
     :root {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 3vw;
+        font-size: 2rem;
         background: black;
         color: #c7c7c7;
     }
@@ -32,8 +32,9 @@
     }
 
     :global(article) {
-        max-width: 500px;
-        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     :global(a, a:visited) {
@@ -41,14 +42,20 @@
     }
 
     :global(input) {
-        font-size: 3vw;
-        padding: .5rem 1rem;
+        font-size: 16pt;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
         text-align: center;
+        background: #c7c7c7;
+        border: none;
     }
 
     :global(button) {
         padding: .5rem 2rem;
-        font-size: 3vw;
+        font-size: 16pt;
+        background: #c7c7c7;
+        border: none;
+        border-radius: 5px;
     }
 
     :global(fieldset) {
@@ -57,5 +64,7 @@
         gap: 1rem;
         border: 1px solid gray;
         border-radius: 5px;
+        padding: .5rem;
+        margin-left: -.25rem;
     }
 </style>
