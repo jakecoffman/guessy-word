@@ -24,4 +24,6 @@
     <input type="text" bind:value={myGuess}>
     <button on:click={submitGuess}>Submit Guess</button>
   </fieldset>
+
+  <p>Score: {game.Score}/{game.Round}</p>
 </article>

@@ -25,13 +25,19 @@
 
   <ul>
   {#each game.Players as player}
-    <li>{player.name ? player.name : "Player " + player.Id}</li>
+    <li>
+      {player.name ? player.name : "Player " + player.Id}
+      {you.Id === player.Id ? '(you)' : ''}
+      {player.Ready ? '✅' : ''}
+    </li>
   {/each}
   </ul>
 
-  <button on:click={toggleReady}>
-    {you.IsReady ? 'Unready' : 'Ready'}
-  </button>
+  {#if !you.IsReady}
+    <button on:click={toggleReady} style="margin-bottom: 1rem;">
+      Ready Up!
+    </button>
+  {/if}
 
   <fieldset>
     <legend>Name yourself</legend>

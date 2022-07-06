@@ -70,7 +70,7 @@
     <Lobby ws={ws} game={game} you={you}/>
   {:else if game.State === 'writing'}
     {#if you.IsGuesser}
-      <Wait say="Waiting for clues"/>
+      <Wait say="Waiting for clues" game={game}/>
     {:else}
       <Clues ws={ws} game={game} you={you}/>
     {/if}
@@ -78,15 +78,13 @@
     {#if you.IsGuesser}
       <Guess ws={ws} game={game} you={you}/>
     {:else}
-      <Wait msg="Waiting for guesser"/>
+      <Wait msg="Waiting for guesser" game={game}/>
     {/if}
   {:else if game.State === 'end'}
     <End ws={ws} game={game} you={you}/>
   {:else}
     <p>Unexpected game state {game.State}</p>
   {/if}
-
-  <p>Score: {game.Score}/{game.Round}</p>
 
 </main>
 

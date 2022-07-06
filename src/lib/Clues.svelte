@@ -13,8 +13,9 @@
   <h1>Clues</h1>
   <p>Write a clue for the guesser to help them guess the word.</p>
 
-  <h2>The word the guesser will guess:</h2>
-  <b>{game.GuessMe}</b>
+  <p>The word the guesser will guess:</p>
+
+  <h2>{game.GuessMe}</h2>
 
   <fieldset>
     <legend>Your clue</legend>
