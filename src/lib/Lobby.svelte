@@ -11,7 +11,7 @@
   }
 
   function joinNew() {
-    ws.send(JSON.stringify({Type: 'join', Data: Number(newGameNumber)}))
+    ws.send(JSON.stringify({Type: 'join', Data: newGameNumber}))
   }
 
   function toggleReady() {
