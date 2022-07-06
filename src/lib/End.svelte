@@ -1,0 +1,57 @@
+<script>
+  export let ws
+  export let you = {}
+  export let game = {}
+
+  let newName = ''
+
+  function submit() {
+    ws.send(JSON.stringify({Type: 'name', Data: newName}))
+  }
+
+  function toggleReady() {
+    if (you.IsReady) {
+      ws.send(JSON.stringify({Type: 'ready', Data: false}))
+    } else {
+      ws.send(JSON.stringify({Type: 'ready', Data: true}))
+    }
+  }
+</script>
+
+<article>
+  <h1>Game Over</h1>
+
+  <p>Final score: {game.Score} out of {game.Round}</p>
+
+  <ul>
+    {#each game.Players as player}
+      <li>{player.name ? player.name : "Player " + player.Id}</li>
+    {/each}
+  </ul>
+
+  <button on:click={toggleReady}>
+    {you.IsReady ? 'Unready' : 'Ready'}
+  </button>
+
+  <fieldset>
+    <legend>Name yourself</legend>
+    <input type="text" maxlength="8" bind:value={newName}>
+    <button on:click={submit}>Rename</button>
+  </fieldset>
+
+  <p>
+    Tell players to join game {location.hash.split('#')[1]} or use this link:
+  </p>
+
+  <a href={"http://localhost:3000/" + location.hash}>
+    http://localhost:3000/{location.hash}
+  </a>
+
+</article>
+
+<style>
+    article {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
