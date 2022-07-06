@@ -4,9 +4,14 @@
   export let game = {}
 
   let newName = ''
+  let newGameNumber = ''
 
   function submit() {
     ws.send(JSON.stringify({Type: 'name', Data: newName}))
+  }
+
+  function joinNew() {
+    ws.send(JSON.stringify({Type: 'join', Data: Number(newGameNumber)}))
   }
 
   function toggleReady() {
@@ -26,7 +31,7 @@
   <ul>
   {#each game.Players as player}
     <li>
-      {player.name ? player.name : "Player " + player.Id}
+      {player.Name ? player.Name : "Player " + player.Id}
       {you.Id === player.Id ? '(you)' : ''}
       {player.Ready ? '✅' : ''}
     </li>
@@ -49,9 +54,15 @@
     Tell players to join game {location.hash.split('#')[1]} or use this link:
   </p>
 
-  <a href={"http://localhost:3000/" + location.hash}>
-    http://localhost:3000/{location.hash}
+  <a href={location} style="margin-bottom: 1rem">
+    {location}
   </a>
+
+  <fieldset style="margin-top: 1rem">
+    <legend>Join a Game</legend>
+    <input type="number" maxlength="6" bind:value={newGameNumber}>
+    <button on:click={joinNew}>Join</button>
+  </fieldset>
 
 </article>
 

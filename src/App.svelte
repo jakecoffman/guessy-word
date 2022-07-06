@@ -22,6 +22,13 @@
 
     :global(ul) {
         list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+    }
+
+    :global(li) {
+        padding: 0;
+        margin: 0;
     }
 
     :global(article) {

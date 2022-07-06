@@ -26,7 +26,7 @@
   <ul>
     {#each game.Players as player}
       <li>
-        {player.name ? player.name : "Player " + player.Id}
+        {player.Name ? player.Name : "Player " + player.Id}
         {you.Id === player.Id ? '(you)' : ''}
         {player.Ready ? '✅' : ''}
       </li>
@@ -49,8 +49,8 @@
     Tell players to join game {location.hash.split('#')[1]} or use this link:
   </p>
 
-  <a href={"http://localhost:3000/" + location.hash}>
-    http://localhost:3000/{location.hash}
+  <a href={location}>
+    {location}
   </a>
 
 </article>
