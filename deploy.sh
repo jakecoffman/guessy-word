@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rm -rf dist
+npm ci
 npm run build
 tar -czvf dist.tar.gz dist
 scp dist.tar.gz deploy@stldevs.com:~
