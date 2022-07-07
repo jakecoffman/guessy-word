@@ -17,7 +17,14 @@
     }
 
     :global(h1) {
-        margin: 0 .5rem .5rem;
+        color: #ff3e00;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 100;
+        line-height: 1.1;
+        margin: 0 auto;
+        max-width: 14rem;
     }
 
     :global(ul) {
