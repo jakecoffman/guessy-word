@@ -67,7 +67,11 @@
 </script>
 
 <main>
-  {#if game.State === 'lobby'}
+  {#if !connected && initial}
+    Connecting...
+  {:else if !connected}
+    Disconnected, please refresh.
+  {:else if game.State === 'lobby'}
     <Lobby ws={ws} game={game} you={you}/>
   {:else if game.State === 'writing'}
     {#if you.IsGuesser}
