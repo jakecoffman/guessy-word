@@ -7,6 +7,7 @@
   import Wait from "./Wait.svelte";
   import Guess from "./Guess.svelte";
   import End from "./End.svelte";
+  import Reconcile from "./Reconcile.svelte";
 
   let connected = false
   let initial = true
@@ -78,6 +79,12 @@
       <Wait say="Waiting for clues" game={game}/>
     {:else}
       <Clues ws={ws} game={game} you={you}/>
+    {/if}
+  {:else if game.State === 'reconcile'}
+    {#if you.IsGuesser}
+      <Wait say="Waiting for clues" game={game}/>
+    {:else}
+      <Reconcile ws={ws} game={game} you={you}/>
     {/if}
   {:else if game.State === 'guessing'}
     {#if you.IsGuesser}

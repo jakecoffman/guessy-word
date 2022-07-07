@@ -4,6 +4,9 @@
 
   let myGuess = ''
   function submitGuess() {
+    if (myGuess.length === 0) {
+      return
+    }
     ws.send(JSON.stringify({Type: 'guess', Data: myGuess}))
   }
 </script>
@@ -15,7 +18,7 @@
 
   <ul>
     {#each game.Clues as clue}
-      <li>{clue}</li>
+      <li>{clue.Text}</li>
     {/each}
   </ul>
 
