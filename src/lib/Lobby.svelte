@@ -51,12 +51,8 @@
   </fieldset>
 
   <p>
-    Tell players to join game {location.hash.split('#')[1]} or use this link:
+    Tell players to join game {location.hash.split('#')[1]} or use <a href={location} style="margin-bottom: 1rem">this link</a>
   </p>
-
-  <a href={location} style="margin-bottom: 1rem">
-    {location}
-  </a>
 
   <fieldset style="margin-top: 1rem">
     <legend>Join a Game</legend>
