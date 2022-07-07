@@ -91,12 +91,31 @@
     <p>Unexpected game state {game.State}</p>
   {/if}
 
+  {#if game.State === 'lobby' || game.State === 'end'}
+    <h2>Rules</h2>
+    <p>This is a cooperative party game.</p>
+    <p>
+      Players take turns being the Guesser. The Guesser must guess a
+      word given clues from the other players.
+    </p>
+    <p>
+      If players give the same clue, it is deleted. Players may not
+      talk about what clue to use. The clue can't be a form of the word.
+      The clue must be a word.
+    </p>
+    <p>
+      Not all of these rules are enforced by the system so you
+      can choose to have house rules if you like.
+    </p>
+  {/if}
+
 </main>
 
 <style>
     main {
         text-align: center;
         padding: 1em;
+        max-width: 500px;
         margin: 0 auto;
     }
 

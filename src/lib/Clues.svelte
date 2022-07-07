@@ -11,9 +11,12 @@
 
 <article>
   <h1>Clues</h1>
-  <p>Write a clue for the guesser to help them guess the word.</p>
+  <p>
+    Write a clue for the guesser to help them guess the word.
+    If another player enters the same word, it will be removed.
+  </p>
 
-  <p>The word the guesser will guess:</p>
+  <p style="margin-bottom: 0">The word the guesser will guess:</p>
 
   <h2>{game.GuessMe}</h2>
 

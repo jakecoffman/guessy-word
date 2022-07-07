@@ -11,7 +11,7 @@
     :root {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 2rem;
+        font-size: 1.5rem;
         background: black;
         color: #c7c7c7;
     }
@@ -25,6 +25,11 @@
         line-height: 1.1;
         margin: 0 auto;
         max-width: 14rem;
+    }
+
+    :global(h2) {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     :global(ul) {
@@ -42,6 +47,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 500px;
+        margin: auto
     }
 
     :global(a, a:visited) {
