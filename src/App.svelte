@@ -56,12 +56,13 @@
     }
 
     :global(input) {
-        font-size: 24pt;
+        font-size: 16pt;
         padding-top: .25rem;
         padding-bottom: .25rem;
         text-align: center;
         background: #c7c7c7;
         border: none;
+        border-radius: 5px;
     }
 
     :global(button) {
@@ -80,5 +81,10 @@
         border-radius: 5px;
         padding: .5rem;
         margin-left: -.25rem;
+    }
+
+    :global(.default-notification-style) {
+        font-size: 12pt;
+        background: #84c9ec !important;
     }
 </style>
