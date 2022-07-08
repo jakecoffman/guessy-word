@@ -17,30 +17,39 @@
   }
 
   function ready() {
-    ws.send(JSON.stringify({Type: 'ready', Data: true}))
+    ws.send(JSON.stringify({Type: 'ready', Data: !you.IsReady}))
   }
 </script>
 
 <article>
   <h1>Dupes</h1>
   <p>
-    Remove all clues that are the same, or similar to each other, or violate any rules.
+    Check all clues that are the same, or similar to each other, or violate any rules.
   </p>
 
-  <ul>
+  <ul style="list-style: none;">
     {#each game.Clues as clue}
     <li>
       <label>
-        <input type="checkbox" bind:checked={clue.Dupe} on:click={() => toggle(clue)}> {clue.Text}
+        <input type="checkbox" bind:checked={clue.Dupe} on:click={() => toggle(clue)} disabled={you.IsReady}> {clue.Text}
       </label>
     </li>
     {/each}
   </ul>
 
-  {#if !you.IsReady}
-    <button on:click={ready}>
-      I'm Done
-    </button>
-  {/if}
+  <button on:click={ready}>
+    {you.IsReady ? '✅' : ''} I'm Done
+  </button>
+
+  <ul>
+    {#each game.Players as player}
+      <li>
+        {player.Name ? player.Name : "Player " + player.Id}
+        {you.Id === player.Id ? '(you)' : ''}
+        {player.Ready ? '✅' : ''}
+        {player.IsGuesser ? '(guesser)' : ''}
+      </li>
+    {/each}
+  </ul>
 
 </article>

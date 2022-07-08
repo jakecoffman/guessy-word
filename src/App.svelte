@@ -33,14 +33,14 @@
     }
 
     :global(ul) {
-        list-style: none;
         padding: 0;
-        margin: 1rem 0;
+        margin: 1rem auto;
     }
 
     :global(li) {
         padding: 0;
-        margin: 0;
+        margin: 0 0 .5rem;
+        text-align: left;
     }
 
     :global(article) {
@@ -56,9 +56,9 @@
     }
 
     :global(input) {
-        font-size: 16pt;
-        padding-top: .5rem;
-        padding-bottom: .5rem;
+        font-size: 24pt;
+        padding-top: .25rem;
+        padding-bottom: .25rem;
         text-align: center;
         background: #c7c7c7;
         border: none;

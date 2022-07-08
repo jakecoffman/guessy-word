@@ -24,7 +24,7 @@
 
   <fieldset>
     <legend>Your Guess</legend>
-    <input type="text" bind:value={myGuess}>
+    <input type="text" bind:value={myGuess} on:keyup={e=>e.key==='Enter' && submitGuess()}>
     <button on:click={submitGuess} style="background: #a16868;">Submit Guess</button>
   </fieldset>
 

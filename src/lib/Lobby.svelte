@@ -38,11 +38,9 @@
   {/each}
   </ul>
 
-  {#if !you.IsReady}
-    <button on:click={toggleReady} style="background: #5f985f; margin-bottom: 1rem;">
-      Ready Up!
-    </button>
-  {/if}
+  <button on:click={toggleReady} style="background: #5f985f; margin-bottom: 1rem;">
+    {you.IsReady ? 'Unready' : 'Ready Up!'}
+  </button>
 
   <fieldset>
     <legend>Name yourself</legend>

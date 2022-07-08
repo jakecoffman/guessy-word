@@ -22,7 +22,9 @@
 
   <fieldset>
     <legend>Your clue</legend>
-    <input type="text" bind:value={myClue}>
-    <button on:click={submit} style="background: #5e5ea1">Submit Clue</button>
+    <input type="text" bind:value={myClue} on:keyup={e=>e.key==='Enter' && submit()}>
+    <button on:click={submit} style="background: #5e5ea1">
+      {you.Clue ? '✅' : ''} Submit Clue
+    </button>
   </fieldset>
 </article>
