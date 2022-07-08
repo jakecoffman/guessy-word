@@ -81,4 +81,8 @@
         padding: .5rem;
         margin-left: -.25rem;
     }
+
+    :global(.default-notification-style) {
+        font-size: 12pt;
+    }
 </style>

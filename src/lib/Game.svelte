@@ -47,7 +47,7 @@
         addNotification({
           text: data.Msg,
           removeAfter: 4000,
-          position: 'bottom-right'
+          position: 'bottom-left'
         })
         break
       case 'all':
