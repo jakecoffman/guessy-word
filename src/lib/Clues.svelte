@@ -18,7 +18,7 @@
 
   <p style="margin-bottom: 0">The word the guesser will guess:</p>
 
-  <h2>{game.GuessMe}</h2>
+  <h2>{you.GuessMe}</h2>
 
   <fieldset>
     <legend>Your clue</legend>

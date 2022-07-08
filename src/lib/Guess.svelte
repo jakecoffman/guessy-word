@@ -1,6 +1,7 @@
 <script>
   export let ws
   export let game = {}
+  export let you = {}
 
   let myGuess = ''
   function submitGuess() {
@@ -17,7 +18,7 @@
   <p>Guess the secret word given these clues:</p>
 
   <ul>
-    {#each game.Clues as clue}
+    {#each you.Clues as clue}
       <li>{clue.Text}</li>
     {/each}
   </ul>

@@ -28,7 +28,7 @@
   </p>
 
   <ul style="list-style: none;">
-    {#each game.Clues as clue}
+    {#each you.Clues as clue}
     <li>
       <label>
         <input type="checkbox" bind:checked={clue.Dupe} on:click={() => toggle(clue)} disabled={you.IsReady}> {clue.Text}
